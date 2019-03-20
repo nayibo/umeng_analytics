@@ -9,7 +9,7 @@ PODS:
     - UMCCommon
 
 DEPENDENCIES:
-  - Flutter (from `.symlinks/flutter/ios`)
+  - Flutter (from `.symlinks/flutter/ios-release`)
   - umeng_analytics (from `.symlinks/plugins/umeng_analytics/ios`)
 
 SPEC REPOS:
@@ -19,16 +19,16 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: ".symlinks/flutter/ios"
+    :path: ".symlinks/flutter/ios-release"
   umeng_analytics:
     :path: ".symlinks/plugins/umeng_analytics/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
   UMCAnalytics: 901960ede5a8a85f208bd37689ad3e607b433930
   UMCCommon: 79b5a614c958db367113eed5740109d9a98e1223
-  umeng_analytics: ece87e929e5dc7d42fe9b393a7b4035f6b52fd33
+  umeng_analytics: 8f42dc6ec8f99057ac3436d0e1e5599d107ddd68
 
 PODFILE CHECKSUM: aff02bfeed411c636180d6812254b2daeea14d09
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.5.3

@@ -41,5 +41,23 @@ class UmengAnalytics {
     await _channel.invokeMethod('init', args);
     return true;
   }
+
+  // page view
+  static Future<Null> logPageView(String name, int seconds) {
+    _channel.invokeMethod("logPageView", {"name": name, "seconds": seconds});
+  }
+
+  static Future<Null> beginPageView(String name) {
+    _channel.invokeMethod("beginPageView", {"name": name});
+  }
+
+  static Future<Null> endPageView(String name) {
+    _channel.invokeMethod("endPageView", {"name": name});
+  }
+
+  // event
+  static Future<Null> logEvent(String name, {String label}) {
+    _channel.invokeMethod("logEvent", {"label": label});
+  }
 }
 

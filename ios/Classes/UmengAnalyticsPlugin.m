@@ -12,10 +12,27 @@
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
-  if ([@"init" isEqualToString:call.method]) {
-      [self init:call result:result];
+  if ([@"getPlatformVersion" isEqualToString:call.method]) {
+    result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
+  } else if ([@"init" isEqualToString:call.method]) {
+    [self init:call result:result];
+  } else if ([@"logPageView" isEqualToString:call.method]) {
+    [MobClick logPageView:call.arguments[@"name"] seconds:[call.arguments[@"seconds"] intValue]];
+    result(nil);
+  } else if ([@"beginPageView" isEqualToString:call.method]) {
+    [MobClick beginLogPageView:call.arguments[@"name"]];
+    result(nil);
+  } else if ([@"endPageView" isEqualToString:call.method]) {
+    [MobClick endLogPageView:call.arguments[@"name"]];
+    result(nil);
+  } else if ([@"logEvent" isEqualToString:call.method]) {
+    if (call.arguments[@"label"] != [NSNull null])
+      [MobClick event:call.arguments[@"name"] label:call.arguments[@"label"]];
+    else
+      [MobClick event:call.arguments[@"name"]];
+    result(nil);
   } else {
-      result(FlutterMethodNotImplemented);
+    result(FlutterMethodNotImplemented);
   }
 }
 
